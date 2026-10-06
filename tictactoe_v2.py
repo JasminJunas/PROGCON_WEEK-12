@@ -1,163 +1,69 @@
-<?xml version="1.0"?>
-<flowgorithm fileversion="4.2">
-    <attributes>
-        <attribute name="name" value="PROGCON-Week-12-Day2"/>
-        <attribute name="authors" value="Jasmin Junas"/>
-        <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-10-06 10:03:23 PM"/>
-        <attribute name="created" value="SmFzbWluIEp1bmFzO0xBUFRPUC1SUDhWMlJSUjsyMDI2LTEwLTA0OzAyOjEyOjEyIFBNOzM1MzE="/>
-        <attribute name="edited" value="SmFzbWluIEp1bmFzO0xBUFRPUC1SUDhWMlJSUjsyMDI2LTEwLTA2OzEwOjAzOjIzIFBNOzY7MzY0Nw=="/>
-    </attributes>
-    <function name="Main" type="None" variable="">
-        <parameters/>
-        <body>
-            <declare name="board" type="String" array="True" size="9"/>
-            <declare name="currentPlayer" type="Integer" array="False" size=""/>
-            <declare name="winner" type="String" array="False" size=""/>
-            <declare name="move" type="Integer" array="False" size=""/>
-            <declare name="userMove" type="Integer" array="False" size=""/>
-            <declare name="computerMove" type="Integer" array="False" size=""/>
-            <assign variable="board[0]" expression="&quot; &quot;"/>
-            <assign variable="board[1]" expression="&quot; &quot;"/>
-            <assign variable="board[2]" expression="&quot; &quot;"/>
-            <assign variable="board[3]" expression="&quot; &quot;"/>
-            <assign variable="board[4]" expression="&quot; &quot;"/>
-            <assign variable="board[5]" expression="&quot; &quot;"/>
-            <assign variable="board[6]" expression="&quot; &quot;"/>
-            <assign variable="board[7]" expression="&quot; &quot;"/>
-            <assign variable="board[8]" expression="&quot; &quot;"/>
-            <assign variable="currentPlayer" expression="Random(2) + 1"/>
-            <assign variable="winner" expression="&quot;&quot;"/>
-            <while expression="winner = &quot;&quot;">
-                <input variable="move"/>
-                <if expression="move &gt;= 1 And move &lt;= 9">
-                    <then>
-                        <assign variable="board[move - 1]" expression="&quot;O&quot;"/>
-                        <if expression="board[move - 1] = &quot; &quot;">
-                            <then>
-                                <assign variable="board[move - 1]" expression="&quot;O&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[0] = &quot;O&quot; And board[1] = &quot;O&quot; And board[2] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="board[0] &amp; &quot;|&quot; &amp; board[1] &amp; &quot;|&quot; &amp; board[2]" newline="True"/>
-                        <if expression="board[3] = &quot;O&quot; And board[4] = &quot;O&quot; And board[5] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="board[3] &amp; &quot;|&quot; &amp; board[4] &amp; &quot;|&quot; &amp; board[5]" newline="True"/>
-                        <if expression="board[6] = &quot;O&quot; And board[7] = &quot;O&quot; And board[8] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="board[6] &amp; &quot;|&quot; &amp; board[7] &amp; &quot;|&quot; &amp; board[8]" newline="True"/>
-                        <if expression="board[0] = &quot;O&quot; And board[3] = &quot;O&quot; And board[6] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User Wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[1] = &quot;O&quot; And board[4] = &quot;O&quot; And board[7] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[2] = &quot;O&quot; And board[5] = &quot;O&quot; And board[8] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[0] = &quot;O&quot; And board[4] = &quot;O&quot; And board[8] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[2] = &quot;O&quot; And board[4] = &quot;O&quot; And board[6] = &quot;O&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;User wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="&quot;Computer's Turn...&quot;" newline="True"/>
-                        <assign variable="computerMove" expression="Random(9)"/>
-                        <assign variable="board[computerMove]" expression="&quot;X&quot;"/>
-                        <if expression="board[computerMove] = &quot; &quot;">
-                            <then>
-                                <assign variable="board[computerMove]" expression="&quot;X&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[0] = &quot;X&quot; And board[1] = &quot;X&quot; And board[2] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="board[0] &amp; &quot;|&quot; &amp; board[1] &amp; &quot;|&quot; &amp; board[2]" newline="True"/>
-                        <if expression="board[3] = &quot;X&quot; And board[4] = &quot;X&quot; And board[5] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="board[3] &amp; &quot;|&quot; &amp; board[4] &amp; &quot;|&quot; &amp; board[5]" newline="True"/>
-                        <if expression="board[6] = &quot;X&quot; And board[7] = &quot;X&quot; And board[8] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <output expression="board[6] &amp; &quot;|&quot; &amp; board[7] &amp; &quot;|&quot; &amp; board[8]" newline="True"/>
-                        <if expression="board[0] = &quot;X&quot; And board[3] = &quot;X&quot; And board[6] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[1] = &quot;X&quot; And board[4] = &quot;X&quot; And board[7] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[2] = &quot;X&quot; And board[5] = &quot;X&quot; And board[8] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[0] = &quot;X&quot; And board[4] = &quot;X&quot; And board[8] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                        <if expression="board[2] = &quot;X&quot; And board[4] = &quot;X&quot; And board[6] = &quot;X&quot;">
-                            <then>
-                                <assign variable="winner" expression="&quot;Computer wins&quot;"/>
-                            </then>
-                            <else/>
-                        </if>
-                    </then>
-                    <else>
-                        <output expression="&quot;Invalid Move&quot;" newline="True"/>
-                        <assign variable="board[computerMove]" expression="&quot;O&quot;"/>
-                    </else>
-                </if>
-            </while>
-            <output expression="Winner" newline="True"/>
-        </body>
-    </function>
-</flowgorithm>
+import random
+random.seed()   #Prepare random number generator
+
+board = [""] * (9)
+
+board[0] = " "
+board[1] = " "
+board[2] = " "
+board[3] = " "
+board[4] = " "
+board[5] = " "
+board[6] = " "
+board[7] = " "
+board[8] = " "
+currentPlayer = int(random.random() * 2) + 1
+winner = ""
+while winner == "":
+    move = int(input())
+    if move >= 1 and move <= 9:
+        board[move - 1] = "O"
+        if board[move - 1] == " ":
+            board[move - 1] = "O"
+        if board[0] == "O" and board[1] == "O" and board[2] == "O":
+            winner = "User wins"
+        print(board[0] + "|" + board[1] + "|" + board[2])
+        if board[3] == "O" and board[4] == "O" and board[5] == "O":
+            winner = "User wins"
+        print(board[3] + "|" + board[4] + "|" + board[5])
+        if board[6] == "O" and board[7] == "O" and board[8] == "O":
+            winner = "User wins"
+        print(board[6] + "|" + board[7] + "|" + board[8])
+        if board[0] == "O" and board[3] == "O" and board[6] == "O":
+            winner = "User Wins"
+        if board[1] == "O" and board[4] == "O" and board[7] == "O":
+            winner = "User wins"
+        if board[2] == "O" and board[5] == "O" and board[8] == "O":
+            winner = "User wins"
+        if board[0] == "O" and board[4] == "O" and board[8] == "O":
+            winner = "User wins"
+        if board[2] == "O" and board[4] == "O" and board[6] == "O":
+            winner = "User wins"
+        print("Computer's Turn...")
+        computerMove = int(random.random() * 9)
+        board[computerMove] = "X"
+        if board[computerMove] == " ":
+            board[computerMove] = "X"
+        if board[0] == "X" and board[1] == "X" and board[2] == "X":
+            winner = "Computer wins"
+        print(board[0] + "|" + board[1] + "|" + board[2])
+        if board[3] == "X" and board[4] == "X" and board[5] == "X":
+            winner = "Computer wins"
+        print(board[3] + "|" + board[4] + "|" + board[5])
+        if board[6] == "X" and board[7] == "X" and board[8] == "X":
+            winner = "Computer wins"
+        print(board[6] + "|" + board[7] + "|" + board[8])
+        if board[0] == "X" and board[3] == "X" and board[6] == "X":
+            winner = "Computer wins"
+        if board[1] == "X" and board[4] == "X" and board[7] == "X":
+            winner = "Computer wins"
+        if board[2] == "X" and board[5] == "X" and board[8] == "X":
+            winner = "Computer wins"
+        if board[0] == "X" and board[4] == "X" and board[8] == "X":
+            winner = "Computer wins"
+        if board[2] == "X" and board[4] == "X" and board[6] == "X":
+            winner = "Computer wins"
+    else:
+        print("Invalid Move")
+        board[computerMove] = "O"
+print(winner)
